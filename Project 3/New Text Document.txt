@@ -1,0 +1,94 @@
+set severoutput on size 32000
+
+create or replace procedure students_in_department(dept IN number) as
+
+cnt integer;
+CURSOR stu_cur is Select sname from Student where deptid=dept;
+
+stu_rec stu_cur%rowtype;
+
+begin
+  cnt:=1;
+ for stu_rec in stu_cur loop
+     dbms_output.put_line(cnt || '. ' || stu_rec.sname);
+     cnt :=cnt+1;
+ end loop;
+end student_in_department;
+/
+
+begin
+student_in_department(1);
+end;
+/
+
+
+create or repelce procedure students_in_class as(class_name IN Enrolled.cname%type) as
+
+stu_number integer;
+stu_name varchar(20);
+CURSOR enr_cur is select snum from Enrolled where cname=class_name;
+enr_rec enr_cur%rowtype;
+
+begin
+ 	for enr_rec in enr_cur loop
+		stu_number := enr_rec.snum;
+		select snmae from Student where snum= stu_number;
+		dbms_output.put_line(stu_name);
+	end loop;
+
+end students_in_class;
+/
+
+
+begin
+students_in_class('ENG400');
+end;
+/
+
+create or replace proceduere add_fauculty (fid integer, fname varchar, deptid integer)
+as
+
+begin 
+insert into Faculty values (dif, fanme, deptid);
+end add_faculty;
+/
+select *from Faculty;
+
+begin
+add_faculty(2010, 'B.Bhargava',1);
+end;
+/
+
+
+select * from Faculty;
+
+
+create or replace procedure average_ages as 
+
+avg-avg number;
+num_students number;
+dept varchar(20);
+
+CURSOR dept_cur is select distinct deptid from Student;
+CURSOR age_cur(did IN integer ) is select age from Student where deptid=did;
+
+dept_rec dept_cur%rowtype;
+age_rec age_cur%rowtype;
+
+begin 
+	for dept_rec in dept_cur loop
+		avg_age :=0;
+		num_students  :=0
+		for age_rec in age_cur(dept_rec.deptid)	loop
+			avg_age:=avg_age+age_rec.age;
+			num_students:=nums_students+1;
+	
+		end loop;
+		ave_age:=avg_age/num_students;
+		select dname into dept from Department where deptid+dept _rec.deptid;
+		dbms_output.put_line(dept || ' || ' || avgage);
+		
+
+end average-ages;
+
+

@@ -1,0 +1,8 @@
+Department_Database
+cs c_s law
+Faculty_Database
+101 s_l cs
+Class_Database
+Student_Database
+0418 j_s junior 20 cs
+enrolled_at_Database

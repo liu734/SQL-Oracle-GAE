@@ -1,0 +1,10 @@
+Department Database
+cs c_s lawson
+Faculty Database
+101 s_l cs
+Class Database
+cs30701 haasg66 mwf8:30 101
+Student Database
+0418 j_s junior 20 cs
+enrolled_at Database
+0418 cs30701
